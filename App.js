@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TouchableOpacity, ImageBackground, SafeAreaView } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, ImageBackground, SafeAreaView, Button} from "react-native";
 import {Ionicons} from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons'; 
 
@@ -18,21 +18,31 @@ const App = () => {
     
     <View >
       <View style= {styles.header}>
-        <AntDesign name="bars" size={24} style= {styles.hIcon}/>
+        <TouchableOpacity>
+        <AntDesign name="bars" size={35} style= {styles.hIcon}/>
+        </TouchableOpacity>
+
         
-        <Text style= {styles.txtHeader}>Madeter Marcenaria</Text>
+        <Text style= {styles.txtHeader}>Madeter</Text>
 
-
-        <AntDesign name="questioncircleo" size={24} color="white" style= {styles.hIconT}/>
+        <TouchableOpacity>
+        <AntDesign name="questioncircleo" size={35} color="white" style= {styles.hIconT}/>
+        </TouchableOpacity>
+      
 
 
       </View>
 
       
-        <Text>Quem somos</Text>
-        <Text>Nascidos em uma família de marceneiros os irmãos Jonas, Reginaldo, Ricardo e Sérgio, foram ensinados por seu pai Jonas Pereira, o oficio paterno. Passados muitos anos
+        <Text style= {styles.txtG}>Quem somos</Text>
+        <Text style= {styles.txtP}>Nascidos em uma família de marceneiros os irmãos Jonas, Reginaldo, Ricardo e Sérgio, foram ensinados por seu pai Jonas Pereira, o oficio paterno. Passados muitos anos
           os irmãos unificando as empresas pertencentes ao grupo nascendo assim uma Nova Madeter.
         </Text>
+
+
+        <TouchableOpacity style= {styles.btnPrinc}>
+          <Text style= {styles.btnPrincTxt}>Veja nossos produtos</Text>
+        </TouchableOpacity>
       </View>
 
 
@@ -48,19 +58,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 20,
     justifyContent: 'space-between',
+    paddingHorizontal:15,
     
-    maxWidth: '100%'
+    height:70
     
     
     
   },
   txtHeader: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
     color: '#ffffff',
     fontWeight: 'bold',
     flex:1,
-    height: 20,
+    
     
 
    
@@ -73,8 +84,30 @@ const styles = StyleSheet.create({
   },
   hIconT: {
     flex:1,
+    textAlign: 'right'
     
+    
+  },
+
+  txtG: {
+    color: '#000000',
+    textAlign: 'center',
+    fontWeight:'bold',
+    fontSize:35
+  },
+  txtP: {
+    fontSize:20,
+    color: '#8B4513'
+  },
+  btnPrinc:{
+
+    
+  },
+  btnPrincTxt:{
+    textAlign: 'center',
+    backgroundColor: "#8B4513"
   }
+
 })
 
 export default App;
