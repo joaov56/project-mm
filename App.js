@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, ImageBackground, SafeAreaView, Button, Image } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons';
-import Routes from './src/Routes'
+import Routes from './src/Routes';
+
 
 
 import * as Font from 'expo-font';

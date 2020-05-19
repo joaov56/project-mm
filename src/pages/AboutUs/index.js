@@ -18,7 +18,7 @@ const AboutUs = () => {
 
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     txtG: {
         color: '#000000',
         textAlign: 'center',
