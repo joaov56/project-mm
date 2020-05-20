@@ -32,7 +32,7 @@ function Item({ title }) {
 }
 
 
-export default function Store() {
+export default function Store({ navigation }) {
     return (
         <View>
             <Logo />
