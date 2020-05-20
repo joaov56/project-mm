@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Logo from '../Header';
 import { createStackNavigator } from '@react-navigation/stack';
 import Store from '../Store'
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+
+
+
+const fetchFonts = () => {
+    return Font.loadAsync({
+        'caladea-bold': require('../../../assets/fonts/Caladea-Bold.ttf'),
+        'caladea-reg': require('../../../assets/fonts/Caladea-Regular.ttf'),
+        'caladea-bolditalic': require('../../../assets/fonts/Caladea-BoldItalic.ttf'),
+
+
+    });
+};
 
 const AboutUs = ({ navigation }) => {
+    const [dataLoaded, setDataLoaded] = useState(false);
+    if (!dataLoaded) {
+        return (
+            <AppLoading
+                startAsync={fetchFonts}
+                onFinish={() => setDataLoaded(true)}
+            />
+        )
+    }
+
     return (
         <View>
             <Logo />
@@ -25,13 +49,16 @@ const styles = StyleSheet.create({
     txtG: {
         color: '#000000',
         textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: 35
+
+        fontSize: 35,
+        fontFamily: 'caladea-bolditalic'
     },
     txtP: {
         fontSize: 25,
         color: '#8B4513',
-        marginLeft: 10
+        marginLeft: 10,
+        fontFamily: 'caladea-reg',
+        justifyContent: 'center'
     },
     btnPrinc: {
         backgroundColor: '#A0522D',
